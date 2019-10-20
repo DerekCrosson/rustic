@@ -1,0 +1,30 @@
+[package]
+name = "rustic"
+version = "0.1.0"
+authors = ["Derek <derek@designcafe.co.za>"]
+edition = "2018"
+
+[package.metadata.bootimage]
+default-target = "x86_64-rustic.json"
+
+# The development profile
+[profile.dev]
+panic = "abort"
+
+# The release profile
+[profile.release]
+panic = "abort"
+
+[dependencies]
+bootloader = "0.3.12"
+volatile = "0.2.3"
+spin = "0.4.9"
+uart_16550 = "0.1.0"
+x86_64 = "0.5.0"
+
+[dev-dependencies]
+array-init = "0.0.3"
+
+[dependencies.lazy_static]
+version = "1.0"
+features = ["spin_no_std"]
